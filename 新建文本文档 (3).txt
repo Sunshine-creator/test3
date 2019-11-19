@@ -1,0 +1,83 @@
+1、
+unsigned int reverse_bit(unsigned int value)
+	{
+		for (int n = 0; n < 32; n++)
+		{
+			int ret =(value >> n)& 1 *pow(2,31-n);      /* 这里想的是用左移方法写，和一进行与，得到每位数，没位数乘以2的(31-n)次方，最终搁在最高位*/
+		}
+	}
+	int main()
+	{
+		int a = reverse_bit(256);
+		printf(" %d", a);
+	}
+2、
+int average(int a, int b)
+	{
+		printf("please enter two numbers :");
+		scanf("%d  % d", &a, &b);
+		int c = (a + b) >> 1;
+	}
+	int main()
+	{
+		int ret = average(4, 6);
+		printf("%d", ret);
+	}
+3、int  main()
+{
+	int arrary[] = { 22,22,23,23,34,34,56,57,57 };
+	for (int n = 0; n < sizeof(arrary)/sizeof(arrary[0]); n++)
+	{
+		if ((arrary[n]) ^ (arrary[n + 1]) != 0)
+		{
+			printf(" %d\n", arrary[n+1]);
+		  }
+	}
+}
+4、
+int main()
+{
+	char arrary[] = { "student a am i "};
+	int n = sizeof(arrary) / sizeof(arrary[0]);
+	for (int i = 0; i < n; i++)
+	{
+		int left = 0;
+		int right = n - 1;
+		while (left < right)
+		{
+		    char temp = arrary[left];
+			arrary[left] = arrary[right];
+			arrary[right] = char temp;
+			left++;
+			right++;
+			
+		}
+	}
+求一个数的因子
+
+package te.s;
+
+import java.util.*;
+public class TeS {
+
+    public static void main(String[] args) {
+            Scanner input=new Scanner(System.in);
+            System.out.print("Enter a number of integer :");
+            int number=input.nextInt();
+            int i;
+            for(i=2;i<=number;i++)
+            {
+                while(number%i==0)
+                {
+                    number=number/i;
+                    if(number!=1)
+                    {
+                        System.out.print(i+"，");
+                    }
+                    else
+                        System.out.print(i);
+                }
+            }
+    }
+}
+
